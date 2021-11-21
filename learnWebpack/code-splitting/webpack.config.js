@@ -5,15 +5,19 @@ module.exports = {
   mode: 'none', // production, development, none
   entry: './index.js', 
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.js', //filename: '[chunkhash].js'
     path: path.resolve(__dirname, 'dist')
   },
-  module: {
+  module: { // loader settings
     rules: [
+      /*{
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'] //read right to left ['style-loader', 'css-loader', 'sass-loader']
+      },*/
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
+        use: ['style-loader', 'css-loader'] //read right to left ['style-loader', 'css-loader', 'sass-loader']
+      }
     ]
   },
   // plugins: [
